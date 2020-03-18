@@ -46,4 +46,9 @@ public class CustomerController {
 	public void addCustomer(@RequestBody Customer customer){
 		repository.save(customer);
 	}
+	
+	@RequestMapping(value="/webhook", method=RequestMethod.POST)
+	public void webhook(@RequestBody String requestBody){
+		System.out.println(requestBody);
+	}
 }
